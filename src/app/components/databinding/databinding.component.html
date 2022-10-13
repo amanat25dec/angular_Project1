@@ -1,0 +1,134 @@
+<!-- Interpolation -->
+<h2>Name is : {{name}}</h2>
+
+<!-- Property binding -->
+<h2>Name is : <span [innerHTML]="name"></span></h2>
+
+
+<!-- normal html -->
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGCjHYhrksXwIZZwZJlx1jk2JBIcH10v7LZw&usqp=CAU"
+  alt="">&nbsp;
+<!-- with interpolation -->
+<img src={{wallpaper_img}} alt="">&nbsp;
+
+<!-- with Property binding -->
+<img [src]="wallpaper_img" alt="">&nbsp;
+<img bind-src="wallpaper_img" alt="">
+<br>
+<br>
+======================================================================================================
+<br>
+<!-- normal html -->
+<input type="text" value="M.S Dhoni">&nbsp;
+
+<!-- with interpolation -->
+<input type="text" value={{name}}>&nbsp;
+
+<!-- with Property binding -->
+<input type="text" [value]="name">&nbsp;
+<input type="text" bind-value="name">&nbsp;
+
+<!-- two way binding -->
+<input type="text" [(ngModel)]="name">&nbsp;
+
+<br>
+<br>
+======================================================================================================
+<br>
+<!-- normal html -->
+<button class="btn btn-primary" disabled>click me!</button>&nbsp;
+
+<!-- with interpolation -->
+<button class="btn btn-primary" disabled={{flag}}>click me!</button>&nbsp;
+
+<!-- with Property binding -->
+<button class="btn btn-primary" [disabled]="flag">click me!</button>&nbsp;
+<button class="btn btn-primary" bind-disabled="flag">click me!</button>&nbsp;
+<button class="btn btn-warning" (click)="f1('hello world')">click me!</button>&nbsp;
+
+
+<br>
+<br>
+======================================================================================================
+<br>
+
+<h3 [hidden]="show_hide">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ab corrupti non optio et animi
+  repellendus totam
+  consequatur officia odio!</h3>
+<br>
+<button class="btn btn-success" (click)="updatedata()">{{show_hide ? "Show":"Hide"}}</button>
+
+<br>
+<br>
+======================================================================================================
+<br>
+<!-- Normal html -->
+<input type="password" value="abc123"><br><br>
+<!-- with logic -->
+<input type="{{ischeck ? 'text' : 'password' }}" value="abc123">&nbsp;
+<input type="checkbox" (change)="togglepassword()">
+<span>{{ischeck ? "Hide":"Show"}}Password</span>
+
+<br>
+<br>
+======================================================================================================
+<br>
+<!-- two way databinding -->
+<div>calculator</div>
+<input type="number" [(ngModel)]="num1" />&nbsp;
+<input type="number" [(ngModel)]="num2" />
+
+<h5>Addition of {{ num1 }} + {{num2}} is = {{num1+num2}}</h5>
+<h5>substraction of {{ num1 }} - {{num2}} is = {{num1-num2}}</h5>
+<h5>multiplication of {{ num1 }} * {{num2}} is = {{num1*num2}}</h5>
+<h5>division of {{ num1 }} / {{num2}} is = {{num1/num2}}</h5>
+
+<br>
+<br>
+======================================================================================================
+<br>
+<!-- two way databinding -->
+<label for="">State Name</label><br>
+<select name="" id="" [(ngModel)]="state_name">
+  <option value="Kolkatta">Kolkatta</option>
+  <option value="mumbai">mumbai</option>
+  <option value="hyderabad">hyderabad</option>
+  <option value="Delhi">Delhi</option>
+</select>
+<h4>The Seleted State Name is : {{state_name}}</h4>
+
+<br>
+<br>
+======================================================================================================
+<br>
+<!-- two way databinding -->
+<textarea name="" id="" cols="30" rows="5" maxlength="50" [(ngModel)]="message"></textarea>
+
+<h4>message is: {{message}}</h4>
+<h4>Remaining Charater: {{ 50 - message.length}}</h4>
+<h4>typed chars: {{ message.length}}</h4>
+
+<br>
+<br>
+======================================================================================================
+<br>
+
+<h3>{{counter}}</h3>
+<button class="btn btn-info" (click)="increase()">Increase</button>&nbsp;
+<button class="btn btn-info" (click)="decrease()">Decrease</button>
+
+<br>
+<br>
+======================================================================================================
+<br>
+
+<h3>Template Reference Variable</h3>
+
+<input type="number"><br><br>
+<input type="number"><br>
+<button class="btn btn-warning">Add</button>
+
+
+
+
+<br><br><br><br>
