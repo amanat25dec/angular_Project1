@@ -23,6 +23,8 @@ export class DatabindingComponent implements OnInit {
 
   counter = 0;
 
+  addition_value: any = '';
+
   wallpaper_img: any =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGCjHYhrksXwIZZwZJlx1jk2JBIcH10v7LZw&usqp=CAU';
 
@@ -46,5 +48,7 @@ export class DatabindingComponent implements OnInit {
   decrease() {
     this.counter = this.counter - 1;
   }
-  addition(value1: any, value2: any) {}
+  addition(value1: any, value2: any) {
+    this.addition_value = +value1 + +value2;
+  }
 }
