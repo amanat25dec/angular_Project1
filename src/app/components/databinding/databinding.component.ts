@@ -46,4 +46,5 @@ export class DatabindingComponent implements OnInit {
   decrease() {
     this.counter = this.counter - 1;
   }
+  addition(value1: any, value2: any) {}
 }

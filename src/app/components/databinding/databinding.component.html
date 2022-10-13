@@ -124,11 +124,11 @@
 
 <h3>Template Reference Variable</h3>
 
-<input type="number"><br><br>
-<input type="number"><br>
-<button class="btn btn-warning">Add</button>
+<input type="number" #value1><br><br>
+<input type="number" ref-value2><br>
+<button class="btn btn-warning" (click)="addition('value1.value' ,'value2.value')">Add</button>
 
-
+<h3>Additin is : {{addition}}</h3>
 
 
 <br><br><br><br>
