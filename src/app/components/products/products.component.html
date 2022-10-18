@@ -1,0 +1,25 @@
+<label for="">Search items</label>
+<input class="form-control me-2" type="search" placeholder="search Here..." aria-label="Search"
+  [(ngModel)]="searchText">
+
+<button class="btn btn-info" (click)="low_to_high()">price low to high</button>
+<button class="btn btn-info" (click)="high_to_low()">price high to low</button>
+
+
+<div class="container">
+  <div class="card" style="width: 18rem;"
+    *ngFor="let product of product_list | paginate: { itemsPerPage: 4, currentPage: p } | filter : searchText">
+    <img src={{product.image}} class="card-img-top" alt="..." width="150px" height="200px">
+    <div class="card-body">
+      <h5 class="card-title">{{product.title}}</h5>
+      <span style="color:rgb(255, 132, 0) ;"><strong>{{product.category}}</strong></span>
+      <h4> Price:{{product.price}}</h4>
+      <p class="card-text" [hidden]="flag">{{product.description}}</p>
+      <a style="color: blue;" (click)="toggle_des()">{{flag?'read more.......':'read less ^'}}</a><br><br>
+      <h5> Item Available ({{product.rating.count}})</h5>
+      <h5> Rating : {{product.rating.rate}}</h5>
+    </div>
+  </div>
+</div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

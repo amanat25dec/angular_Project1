@@ -1,0 +1,25 @@
+*{
+  margin: 5px;
+  padding: 5px;
+}
+
+
+.container{
+  display:grid;
+  grid-template-columns: auto auto auto auto ;
+  grid-gap: 5px;
+
+}
+
+.card-body{
+  height:45%;
+}
+
+input{
+  border: none;
+  border-radius: 10px;
+}
+button{
+  border: none;
+  border-radius: 10px;
+}

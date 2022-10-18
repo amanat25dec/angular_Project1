@@ -10,6 +10,14 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { DatabindingComponent } from './components/databinding/databinding.component';
 import { FormsModule } from '@angular/forms';
+import { DirectivesComponent } from './components/directives/directives.component';
+import { ProductsComponent } from './components/products/products.component';
+
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { NumberonlyDirective } from './customes_directives/numberonly.directive';
+import { HighlightDirective } from './customes_directives/highlight.directive';
+import { BackButtonDirective } from './customes_directives/back-button.directive';
 
 @NgModule({
   declarations: [
@@ -20,8 +28,20 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     CarouselComponent,
     DatabindingComponent,
+    DirectivesComponent,
+    ProductsComponent,
+    NumberonlyDirective,
+    HighlightDirective,
+    BackButtonDirective,
+    
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    NgxPaginationModule,
+    Ng2SearchPipeModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
