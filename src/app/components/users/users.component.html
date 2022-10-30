@@ -1,0 +1,23 @@
+<h1 class="text-center bg-success text-white">Users Lists</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let user of users">
+      <div class="card" >
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkms62ywj8noI96YorLX4kg6qHaHcq5lhoj_VYj9I0-A&s" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{user.username}}</h4>
+          <h5 class="card-title">{{user.name}}</h5>
+          <p class="card-text">{{user.email}}</p>
+          <p class="card-text">{{user.address.street}}</p>
+          <p class="card-text">{{user.address.city}}</p>
+          <p class="card-text">{{user.address.zipcode}}</p>
+          <p class="card-text">{{user.phone}}</p>
+          <p class="card-text">{{user.website}}</p>
+          <p class="card-text">{{user.company.name}}</p>
+          <a href="#" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

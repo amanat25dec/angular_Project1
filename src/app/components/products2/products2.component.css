@@ -1,0 +1,12 @@
+*{
+  margin: 5px;
+  padding: 5px;
+}
+
+
+.container{
+  display:grid;
+  grid-template-columns: auto auto auto auto ;
+  grid-gap: 5px;
+
+}

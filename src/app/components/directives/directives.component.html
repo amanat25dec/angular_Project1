@@ -41,15 +41,15 @@
 <table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
-      <!-- <th scope="col">S.no.</th> -->
+      <th scope="col">S.no.</th>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
       <th scope="col">Salary</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let emp of employees">
-      <!-- <td>{{i+1}}</td> -->
+    <tr *ngFor="let emp of employees;let i=index">
+      <td>{{i+1}}</td>
       <td>{{emp.eId}}</td>
       <td>{{emp.name}}</td>
       <td>{{emp.sal}}</td>

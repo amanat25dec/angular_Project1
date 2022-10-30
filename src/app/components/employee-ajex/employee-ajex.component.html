@@ -1,0 +1,52 @@
+<h2 class="text-center" style="color: red;"><u> Employees CRUD Example</u></h2>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <!-- <h3 class="text-center">Employees List</h3> -->
+      <button class="btn btn-success" (click)="getAllEmp()">Fetch Employee Data</button>
+      <br><br>
+      <table class="table table-bordered table-success table-striped">
+        <thead>
+          <tr>
+            <th>Emp ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employees">
+            <td>{{emp.id}}</td>
+            <td>{{emp.first_name}}</td>
+            <td>{{emp.last_name}}</td>
+            <td>{{emp.email}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteEmp(emp.id)">Del</button>&nbsp;
+              <button class="btn btn-warning">Edit</button>&nbsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col-sm-4">
+      <div class="box">
+        <h3>Add Employees</h3>
+        <form>
+          <label>First Name </label><br>
+          <input placeholder="Enter Id" #fname />
+          <br>
+          <label>Last Name </label><br>
+          <input placeholder="Enter Name" #lname />
+          <br>
+          <label>Email </label><br>
+          <input placeholder="Enter Salary" #email />
+          <br><br>
+          <button class="btn btn-primary" (click)="addEmp(fname,lname,email)">Add</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

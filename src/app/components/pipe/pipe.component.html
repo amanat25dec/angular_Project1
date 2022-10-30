@@ -1,0 +1,127 @@
+<h4>Name : {{ name }}</h4>
+<h4>Name in lowercase : {{ name | lowercase }}</h4>
+<h4>Name in uppercase : {{ name | uppercase }}</h4>
+<h4>Name in Title case : {{ name | titlecase }}</h4>
+
+<h4>{{ mySal }}</h4>
+<h4>{{ mySal | currency }}</h4>
+<h4>{{ mySal | currency: "INR" }}</h4>
+<!-- input | pipeName : arguement -->
+<h4>{{ mySal | currency: "&yen;" }}</h4>
+<h4>{{ mySal | currency: "&euro;" }}</h4>
+
+<h4>{{ today }}</h4>
+<h4>{{ today | date }}</h4>
+<h4>{{ today | date: "fullDate" }}</h4>
+<h4>{{ today | date: "mediumDate" }}</h4>
+<h4>{{ today | date: "shortDate" }}</h4>
+<h4>{{ today | date: "fullTime" }}</h4>
+<h4>{{ today | date: "mediumTime" }}</h4>
+<h4>{{ today | date: "shortTime" }}</h4>
+<h4>{{ today | date: "dd / MM / yyyy" }}</h4>
+<h4>{{ today | date: "dd / MMM / yyyy" }}</h4>
+<h4>{{ today | date: "dd / MMMM / yyyy" }}</h4>
+
+<!-- How to use multiple pipes (pipe chaining) -->
+<h4>{{ today | date: "dd / MMMM / yyyy" | uppercase }}</h4>
+<h4>{{ today | date: "dd / MMMM / yyyy" | lowercase }}</h4>
+
+<h4>{{ 12.1 | number: "3.2-5" }}</h4>
+<h4>{{ 12.111222333 | number: "3.2-5" }}</h4>
+<h4>{{ 0.75 | percent }}</h4>
+
+<h4>{{ user }}</h4>
+<h4>{{ user | json }}</h4>
+
+<h3 *ngFor="let entry of user | keyvalue">
+  {{ entry.key }}------{{ entry.value }}
+</h3>
+
+
+<br>==============================================================================================<br>
+<textarea name="" id="" cols="30" rows="5" maxlength="100" [(ngModel)]="messege"></textarea>
+<p> messege is :{{messege}}</p>
+<p> Remaining chars :{{messege | remaining:'100'}}</p>
+
+<textarea name="" id="" cols="30" rows="5" maxlength="200" [(ngModel)]="messege2"></textarea>
+<p> messege is :{{messege2}}</p>
+<p> Remaining chars :{{messege2 | remaining:'200'}}</p>
+
+
+<br>==============================================================================================<br>
+
+<input type="number" [(ngModel)]="cardinal">
+<P> The number is : {{cardinal}}</P>
+<P> The number is : {{cardinal | ordinal}}</P>
+
+<br>==============================================================================================<br>
+
+
+
+<table class="table table-bordered table-success table-striped">
+  <thead>
+    <tr>
+      <th>Sl no</th>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; let i=index; ">
+      <td>{{i+1}}</td>
+      <td>{{emp.eId}}</td>
+      <td>{{emp.name | prefix:emp.Gender}}</td>
+      <td>{{emp.sal}}</td>
+      <td>{{emp.Gender}}</td>
+    </tr>
+  </tbody>
+
+</table>
+<br>=============================================================================================<br>
+
+<input type="search" placeholder="search Here..." aria-label="Search" [(ngModel)]="searchtext"><br><br>
+
+<table class="table table-bordered table-success table-striped">
+  <thead>
+    <tr>
+      <th>Sl no.</th>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees | search:searchtext let i=index">
+      <td>{{i+1}}</td>
+      <td>{{emp.eId}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.sal}}</td>
+      <td>{{emp.Gender}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>==============================================================================================<br>
+
+
+Not shorted array is :<b *ngFor="let items of arr">{{items}} &nbsp;</b><br>
+Shorted array is :<b *ngFor="let items of arr |mysort">{{items}} &nbsp;</b><br>
+<input type="number" #newNum> <br>
+<button class="btn btn-info" (click)="arr.push(+newNum.value)">Add new number</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br><br><br><br>

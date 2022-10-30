@@ -1,0 +1,76 @@
+<h2 class="text-center">Employees CRUD Example</h2>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <h3>Employees List</h3>
+
+      <br><br>
+      <table class="table table-bordered table-success table-striped">
+        <thead>
+          <tr>
+            <th>SL No</th>
+            <th>Emp ID</th>
+            <th>Name</th>
+            <th>salary</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let emp of employees;let i=index">
+            <td>{{i+1}}</td>
+            <td>{{emp.eId}}</td>
+            <td>{{emp.name}}</td>
+            <td>{{emp.sal}}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteEmp(emp.eId)">Del</button>&nbsp;
+              <button class="btn btn-secondary" (click)="editEmp(emp.eId)">Edit</button>&nbsp;
+              <button class="btn btn-secondary" (click)="openPopup(emp)">View</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-sm-4">
+      <h3>Add Employees</h3>
+
+      <form>
+        <label>Employee ID </label>
+        <input placeholder="Enter Id" #id />
+        <br>
+        <label>Employee Name </label>
+        <input placeholder="Enter Name" #name />
+        <br>
+        <label>Employee Salary </label>
+        <input placeholder="Enter Salary" #salary />
+        <br><br>
+        <button class="btn btn-primary" (click)="addEmp(id.value ,name.value,salary.value)">Add</button>
+      </form>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Employee Details</h4>
+      </div>
+      <div class="modal-body">
+        <p>Id : {{selectEmployee?.eId}}</p>
+        <p>Name : {{selectEmployee?.name}}</p>
+        <p>sal : {{selectEmployee?.sal}}</p>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="closePopup()">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

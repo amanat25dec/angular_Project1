@@ -1,0 +1,25 @@
+<table class="table table-bordered table-success table-striped">
+  <thead>
+    <tr>
+      <th>Sl no</th>
+      <th>id</th>
+      <th>name</th>
+      <th>salary</th>
+      <th>gender</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of employees; let i=index; ">
+      <td>{{i+1}}</td>
+      <td>{{emp.eId}}</td>
+      <td>{{emp.name}}</td>
+      <td>{{emp.sal}}</td>
+      <td>{{emp.Gender}}</td>
+    </tr>
+  </tbody>
+
+</table>
+
+<button class="btn btn-success" (click)="getAllEmp()">GetAllEmp</button>&nbsp;
+<button class="btn btn-primary" (click)="getMaleEmp()">GetMaleEmp</button>&nbsp;
+<button class="btn btn-secondary" (click)="getFemaleEmp()">GetFemaleEmp</button>&nbsp;
