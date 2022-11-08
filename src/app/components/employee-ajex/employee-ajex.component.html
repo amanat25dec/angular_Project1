@@ -6,7 +6,7 @@
       <!-- <h3 class="text-center">Employees List</h3> -->
       <button class="btn btn-success" (click)="getAllEmp()">Fetch Employee Data</button>
       <br><br>
-      <table class="table table-bordered table-success table-striped">
+      <table class="table table-bordered  table-striped">
         <thead>
           <tr>
             <th>Emp ID</th>
@@ -23,8 +23,8 @@
             <td>{{emp.last_name}}</td>
             <td>{{emp.email}}</td>
             <td>
-              <button class="btn btn-danger" (click)="deleteEmp(emp.id)">Del</button>&nbsp;
-              <button class="btn btn-warning">Edit</button>&nbsp;
+              <button class="btn btn-danger"  (click)="deleteEmp(emp.id)">del</button>&nbsp;
+              <button class="btn btn-warning" (click)="openPopup(emp)">Edit</button>&nbsp;
             </td>
           </tr>
         </tbody>
@@ -34,18 +34,47 @@
     <div class="col-sm-4">
       <div class="box">
         <h3>Add Employees</h3>
-        <form>
+        <form id="myform">
           <label>First Name </label><br>
-          <input placeholder="Enter Id" #fname />
+          <input placeholder="Enter First Name"  #fname />
           <br>
           <label>Last Name </label><br>
-          <input placeholder="Enter Name" #lname />
+          <input placeholder="Enter Last Name" #lname />
           <br>
           <label>Email </label><br>
-          <input placeholder="Enter Salary" #email />
+          <input placeholder="Enter Email" #email />
           <br><br>
           <button class="btn btn-primary" (click)="addEmp(fname,lname,email)">Add</button>
         </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Employee Details</h4>
+      </div>
+      <div class="modal-body">
+        <form #myform>
+          <label>Id </label><br>
+          <input placeholder="Enter Id"  value="{{selectEmployee?.id}}" disabled/>
+          <br>
+          <label>First Name </label><br>
+          <input placeholder="Enter First Name" value="{{selectEmployee?.first_name}}" />
+          <br>
+          <label>Last Name </label><br>
+          <input placeholder="Enter Last Name" value="{{selectEmployee?.last_name}}" />
+          <br>
+          <label>Email </label><br>
+          <input placeholder="Enter Email" value="{{selectEmployee?.email}}" />
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="saveChanges(selectEmployee)">Save Changes</button>&nbsp;
+        <button type="button" class="btn btn-danger" (click)="closePopup()">Close</button>
       </div>
     </div>
   </div>

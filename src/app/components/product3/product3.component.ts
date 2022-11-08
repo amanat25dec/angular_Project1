@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
   selector: 'app-product3',
@@ -7,14 +8,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product3.component.css'],
 })
 export class Product3Component implements OnInit {
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private productsService: ProductsService,
+    private cartService: CartService
+  ) {}
   products: any;
-  ngOnInit(): void {
-    const url = 'https://dummyjson.com/products';
 
-    this.httpClient.get(url).subscribe((res: any) => {
-      console.log(res);
+  ngOnInit(): void {
+    this.productsService.getAllProducts().subscribe((res: any) => {
       this.products = res.products;
     });
+  }
+
+  addToCart(product: any) {
+    this.cartService.addItemToCart(product);
   }
 }

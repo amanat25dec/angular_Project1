@@ -9,10 +9,27 @@
 input{
   width: 300px;
   height: 35px;
-  border: none;
+  /* border: none; */
   border-radius: 5px;
 }
 ::placeholder{
   text-align: center;
   font-weight: bolder;
 }
+
+
+thead:first-child{
+  background-color: rgb(172, 79, 87);
+  color: white;
+}
+tr:nth-child(even){
+  background-color: rgb(205, 205, 201);
+}
+tr:hover{
+  background-color: rgb(229, 163, 168);
+ 
+}
+
+/* .modal-body{
+  background-color: cornflowerblue;
+} */

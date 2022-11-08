@@ -1,0 +1,22 @@
+<h1 align="center"> Seeing the Product Details Of - {{prodId}}</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8">
+      <div class="card">
+        <img src={{productDetails.images[0]}} class="card-img-top" alt="..." height="600px">
+        <div align="center" class="card-body">
+          <h3 class="card-title">{{productDetails.title}}</h3>
+          <h5 class="card-title">{{productDetails.description}}</h5>
+          <h3 class="card-text"> Price : &euro; {{productDetails.price}}</h3>
+          <p class="card-text"> Discount : {{productDetails.discountPercentage}}</p>
+          <p class="card-text"> Rating :{{productDetails.rating}}</p>
+          <p class="card-text">{{productDetails.stock}}</p>
+          <h4 class="card-text">{{productDetails.brand}}</h4>
+          <p class="card-text">{{productDetails.category}}</p>
+          <p class="card-text">{{productDetails.thumbnail}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

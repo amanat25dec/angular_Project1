@@ -41,6 +41,20 @@ import { InterceptorService } from './interceptor.service';
 import { RetryInterceptorService } from './retry-interceptor.service';
 import { SuccessInterceptorService } from './success-interceptor.service';
 import { EmployeeAjexComponent } from './components/employee-ajex/employee-ajex.component';
+import { CartComponent } from './components/cart/cart.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutusComponent } from './components/aboutus/aboutus.component';
+import { ContactusComponent } from './components/contactus/contactus.component';
+import { CarriesComponent } from './components/carries/carries.component';
+import { ProductdetailComponent } from './components/productdetail/productdetail.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { Observable1Component } from './components/observable1/observable1.component';
+import { Observable2Component } from './components/observable2/observable2.component';
+import { Observable3Component } from './components/observable3/observable3.component';
+import { Formdemo1Component } from './components/formdemo1/formdemo1.component';
+import { Formdemo2Component } from './components/formdemo2/formdemo2.component';
+import { Formdemo3Component } from './components/formdemo3/formdemo3.component';
+import { Formdemo4Component } from './components/formdemo4/formdemo4.component';
 
 
 @NgModule({
@@ -74,6 +88,20 @@ import { EmployeeAjexComponent } from './components/employee-ajex/employee-ajex.
     CommentsComponent,
     UserComponent,
     EmployeeAjexComponent,
+    CartComponent,
+    HomeComponent,
+    AboutusComponent,
+    ContactusComponent,
+    CarriesComponent,
+    ProductdetailComponent,
+    NotFoundComponent,
+    Observable1Component,
+    Observable2Component,
+    Observable3Component,
+    Formdemo1Component,
+    Formdemo2Component,
+    Formdemo3Component,
+    Formdemo4Component,
   ],
   imports: [
     BrowserModule,
